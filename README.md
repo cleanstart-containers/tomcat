@@ -5,7 +5,8 @@ The CleanStart Tomcat image provides a production-ready, security-hardened conta
 📌 **Base Foundation**: Security-hardened, minimal base OS designed for enterprise containerized environments.
 
 **Image Path**: `ghcr.io/cleanstart-containers/tomcat`
-**Registry**: cleanstart Registry
+
+**Registry**: `cleanstart Registry`
 
 ## Key Features
 Core capabilities and strengths of this container
@@ -27,14 +28,12 @@ Typical scenarios where this container excels
 Download the container image from the registry
 
 ```bash
-docker pull ghcr.io/cleanstart-containers/tomcat:tomcat
+docker pull ghcr.io/cleanstart-containers/tomcat:latest
 ```
 ```bash
-docker pull ghcr.io/cleanstart-containers/tomcat:container
+docker pull ghcr.io/cleanstart-containers/tomcat:latest-dev
 ```
-```bash
-docker pull ghcr.io/cleanstart-containers/tomcat:enterprise
-```
+
 
 ## Basic Run
 Run the container with basic configuration
@@ -49,7 +48,6 @@ Deploy with production security settings
 ```bash
 docker run -d --name tomcat-prod \
   --security-opt=no-new-privileges \
-  --user 1000:1000 \
   --restart unless-stopped \
   ghcr.io/cleanstart-containers/tomcat:latest
 ```
