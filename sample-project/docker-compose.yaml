@@ -1,0 +1,13 @@
+services:
+
+  tomcat:
+    image: cleanstart/tomcat:latest-dev
+    container_name: tomcat-server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./webapps:/usr/local/tomcat/webapps/sample:ro
+    environment:
+      JAVA_OPTS: "-Xms256m -Xmx512m"
+      CATALINA_OPTS: "-Dfile.encoding=UTF-8"
+    restart: unless-stopped
